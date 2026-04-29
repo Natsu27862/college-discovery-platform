@@ -10,7 +10,7 @@ export default function Compare() {
 
   useEffect(() => {
     if (ids) {
-      fetch(`http://localhost:5000/compare?ids=${ids}`)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/compare?ids=${ids}`)
         .then((res) => res.json())
         .then((data) => setColleges(data));
     }

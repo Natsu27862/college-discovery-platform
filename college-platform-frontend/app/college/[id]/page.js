@@ -7,7 +7,7 @@ export default function CollegeDetail() {
   const [college, setCollege] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/colleges/${id}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/colleges/${id}`)
       .then(res => res.json())
       .then(data => setCollege(data));
   }, [id]);

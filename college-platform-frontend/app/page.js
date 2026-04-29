@@ -21,7 +21,7 @@ export default function Home() {
       minRating,
     });
 
-    fetch(`http://localhost:5000/colleges?${query}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/colleges`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
